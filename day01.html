@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Limits Validation</title>
+
+    <!-- CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            width: 320px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 95%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Registration Form</h2>
+
+    <form onsubmit="return validateForm()">
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <input type="number" id="age" placeholder="Age">
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<!-- JavaScript -->
+<script>
+function validateForm() {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    let age = document.getElementById("age").value;
+
+    // Username limit
+    if (username.length < 3 || username.length > 10) {
+        alert("Username must be between 3 and 10 characters");
+        return false;
+    }
+
+    // Password limit
+    if (password.length < 6) {
+        alert("Password must be at least 6 characters");
+        return false;
+    }
+
+    // Age limit
+    if (age < 18 || age > 25) {
+        alert("Age must be between 18 and 25");
+        return false;
+    }
+
+    alert("Form submitted successfully!");
+    return false; // prevent refresh
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buttons Example</title>
+
+    <!-- CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding-top: 80px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            margin: 10px;
+            font-size: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .btn-text { background-color: #007bff; }
+        .btn-bg { background-color: #28a745; }
+        .btn-alert { background-color: #ffc107; color: black; }
+        .btn-reset { background-color: #dc3545; }
+    </style>
+</head>
+
+<body>
+
+    <!-- HTML -->
+    <h1 id="msg">Welcome!</h1>
+
+    <button class="btn btn-text" onclick="changeText()">Change Text</button>
+    <button class="btn btn-bg" onclick="changeBg()">Change Background</button>
+    <button class="btn btn-alert" onclick="showAlert()">Show Alert</button>
+    <button class="btn btn-reset" onclick="resetPage()">Reset</button>
+
+    <!-- JavaScript -->
+    <script>
+        function changeText() {
+            document.getElementById("msg").innerHTML = "Text Changed Successfully!";
+        }
+
+        function changeBg() {
+            document.body.style.backgroundColor = "#d1ecf1";
+        }
+
+        function showAlert() {
+            alert("This is a JavaScript alert!");
+        }
+
+        function resetPage() {
+            document.getElementById("msg").innerHTML = "Welcome!";
+            document.body.style.backgroundColor = "#f4f4f4";
+        }
+    </script>
+
+</body>
+</html>
